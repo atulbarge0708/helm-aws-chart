@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: atul0708/python-web
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
+  nodePort: 30007
+
