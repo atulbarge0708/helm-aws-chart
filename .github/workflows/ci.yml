@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Image
+      run: docker build -t atul0708/my-devops-app:latest .
+    - name: Login Docker Hub
+      run: docker login -u atul0708 -p Atul@0712
+    - name: Push Image
+      run: docker push atul0708/my-devops-app:latest
+
